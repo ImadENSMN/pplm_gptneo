@@ -844,9 +844,11 @@ def run_pplm_example(
 
     # untokenize unperturbed text
     unpert_gen_text = tokenizer.decode(unpert_gen_tok_text.tolist()[0])
+    for k in range(30):
+        print("")
 
     print("=" * 80)
-    print("= Unperturbed generated text =")
+    print("= GPT-NEO original sans aucunes modifications =")
     print(unpert_gen_text)
     print()
 
@@ -880,8 +882,13 @@ def run_pplm_example(
                         pert_gen_text += tokenizer.decode([word_id])
             else:
                 pert_gen_text = tokenizer.decode(pert_gen_tok_text.tolist()[0])
-
-            print("= Perturbed generated text {} =".format(i + 1))
+            
+            
+            for k in range(30):
+                print("")
+            
+            
+            print("= GPT-NEO controlé par la méthode PPLM, text {} =".format(i + 1))
             print(pert_gen_text)
             print()
         except Exception as exc:
