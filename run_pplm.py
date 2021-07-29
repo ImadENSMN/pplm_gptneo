@@ -844,7 +844,7 @@ def run_pplm_example(
 
     # untokenize unperturbed text
     unpert_gen_text = tokenizer.decode(unpert_gen_tok_text.tolist()[0])
-    for k in range(30):
+    for k in range(5):
         print("")
 
     print("=" * 80)
