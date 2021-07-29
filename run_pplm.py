@@ -884,8 +884,7 @@ def run_pplm_example(
                 pert_gen_text = tokenizer.decode(pert_gen_tok_text.tolist()[0])
             
             
-            for k in range(30):
-                print("")
+  
             
             
             print("= GPT-NEO controlé par la méthode PPLM, text {} =".format(i + 1))
