@@ -22,15 +22,6 @@ python run_pplm.py -B space --cond_text "The president" --length 100 --gamma 1.5
 Example command with discriminator:
 python run_pplm.py -D sentiment --class_label 3 --cond_text "The lake" --length 10 --gamma 1.0 --num_iterations 30 --num_samples 10 --stepsize 0.01 --kl_scale 0.01 --gm_scale 0.95
 """
-import os
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = ""
-
-
-
-
-
-
 
 
 from copy import deepcopy
@@ -46,7 +37,7 @@ from torch.autograd import Variable
 from tqdm import trange
 from transformers.file_utils import cached_path
 from transformers import TFAutoModelForTokenClassification, AutoTokenizer, GPTNeoModel, GPTNeoForCausalLM
-from pplm_upgraded.pplm_classification_head import ClassificationHead
+from pplm_gptneo.pplm_classification_head import ClassificationHead
 
 
 
